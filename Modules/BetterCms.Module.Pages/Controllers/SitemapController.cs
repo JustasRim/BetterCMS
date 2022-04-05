@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
-
+using System.Web.Script.Serialization;
 using BetterCms.Core.Exceptions.Mvc;
 using BetterCms.Core.Security;
 using BetterCms.Module.Pages.Command.History.GetSitemapHistory;
@@ -77,8 +78,9 @@ namespace BetterCms.Module.Pages.Controllers
                 data.Sitemap = model;
                 data.PageLinks = pageLinks;
             }
-
-            return ComboWireJson(success, view, data, JsonRequestBehavior.AllowGet);
+            var jsonResult = ComboWireJson(success, view, data, JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
 
         /// <summary>
