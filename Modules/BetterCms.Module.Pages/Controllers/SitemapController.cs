@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Web.Mvc;
-using System.Web.Script.Serialization;
 using BetterCms.Core.Exceptions.Mvc;
 using BetterCms.Core.Security;
 using BetterCms.Module.Pages.Command.History.GetSitemapHistory;
